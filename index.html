@@ -18,51 +18,11 @@
             }
         }
     </script>
-    <style>
-        .bg-image {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                              url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-        }
-        
-        /* Portrait orientation - use a vertical image */
-        @media (orientation: portrait) {
-            .bg-image {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                                  url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');
-            }
-        }
-        
-        /* Landscape orientation - use a horizontal image */
-        @media (orientation: landscape) {
-            .bg-image {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                                  url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            }
-        }
-        
-        .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(45deg, #fff, #e0e0e0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .gradient-button {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-        }
-        
-        .gradient-button:hover {
-            background: linear-gradient(45deg, #5a67d8, #6b46c1);
-        }
-    </style>
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jtx7hub.css">
 </head>
-<body class="min-h-screen bg-image bg-cover bg-center bg-fixed flex flex-col text-white">
+
+<body class="min-h-screen bg-color bg-cover bg-center bg-fixed flex flex-col text-white">
     <!-- Header -->
     <header class="glass border-b border-white border-opacity-20 p-4 xl:p-6 2k:p-8 4k:p-10">
         <div class="max-w-7xl 2k:max-w-[90rem] 4k:max-w-[120rem] mx-auto flex items-center justify-between">
@@ -73,7 +33,7 @@
             <div class="hidden md:flex items-center space-x-4 xl:space-x-6">
                 <!-- Language Dropdown -->
                 <div class="relative">
-                    <select class="bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg xl:rounded-xl px-3 py-2 xl:px-4 xl:py-3 2k:px-5 2k:py-4 4k:px-6 4k:py-5 text-white text-sm xl:text-base 2k:text-lg 4k:text-xl backdrop-blur-sm focus:outline-none focus:border-opacity-80 appearance-none pr-8 xl:pr-10 2k:pr-12">
+                    <select class="bg-white bg-opacity-0 border border-gray-400 border-opacity-30 rounded-lg xl:rounded-xl px-3 py-2 xl:px-4 xl:py-3 2k:px-5 2k:py-4 4k:px-6 4k:py-5 text-neutral-950 text-sm xl:text-base 2k:text-lg 4k:text-xl backdrop-blur-sm focus:outline-none focus:border-opacity-80 appearance-none pr-8 xl:pr-10 2k:pr-12">
                         <option value="en" class="bg-gray-800 text-white">English</option>
                         <option value="es" class="bg-gray-800 text-white">Español</option>
                         <option value="fr" class="bg-gray-800 text-white">Français</option>
@@ -81,7 +41,7 @@
                         <option value="zh" class="bg-gray-800 text-white">中文</option>
                     </select>
                     <div class="absolute inset-y-0 right-0 flex items-center px-2 xl:px-3 2k:px-4 pointer-events-none">
-                        <svg class="w-4 h-4 xl:w-5 xl:h-5 2k:w-6 2k:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 xl:w-5 xl:h-5 2k:w-6 2k:h-6 text-white" fill="none" stroke="black" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </div>
@@ -139,19 +99,19 @@
             <div class="w-full lg:w-[60%] flex justify-center">
                 <div class="glass rounded-xl sm:rounded-2xl xl:rounded-3xl 2k:rounded-4xl p-6 sm:p-8 lg:p-10 xl:p-12 2k:p-16 4k:p-20 w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl 2k:max-w-2xl 4k:max-w-3xl text-center shadow-2xl">
                     <!-- Title -->
-                    <h1 class="gradient-text text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2k:text-6xl 4k:text-7xl font-bold mb-3 sm:mb-4 lg:mb-6 xl:mb-8 2k:mb-10 4k:mb-12">
-                        Welcome
+                    <h1 class="gradient-text text-left text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2k:text-6xl 4k:text-7xl font-bold mb-3 sm:mb-4 lg:mb-6 xl:mb-8 2k:mb-10 4k:mb-12">
+                        Be Here.<br>Understand Everything.
                     </h1>
                     
                     <!-- Subtitle -->
-                    <h2 class="text-base sm:text-lg lg:text-xl xl:text-2xl 2k:text-3xl 4k:text-4xl font-light mb-4 sm:mb-6 lg:mb-8 xl:mb-10 2k:mb-12 4k:mb-14 opacity-90">
-                        Join Our Community
+                    <h2 class="text-base text-neutral-800 sm:text-lg lg:text-xl xl:text-2xl 2k:text-3xl 4k:text-4xl font-light mb-4 sm:mb-6 lg:mb-8 xl:mb-10 2k:mb-12 4k:mb-14 opacity-90">
+                        <!--Join Our Community-->
                     </h2>
                     
                     <!-- Body Text -->
                     <p class="text-xs sm:text-sm lg:text-base xl:text-lg 2k:text-xl 4k:text-2xl leading-relaxed mb-6 sm:mb-8 lg:mb-10 xl:mb-12 2k:mb-14 4k:mb-16 opacity-80 px-2 sm:px-4 lg:px-2 xl:px-4 2k:px-6 4k:px-8">
-                        Discover amazing experiences and connect with like-minded individuals. 
-                        Enter your unique code below to get started on this incredible journey.
+                        <!--Discover amazing experiences and connect with like-minded individuals. 
+                        Enter your unique code below to get started on this incredible journey.-->
                     </p>
                     
                     <!-- Form Container -->
@@ -159,8 +119,8 @@
                         <!-- Text Input -->
                         <input 
                             type="text" 
-                            class="w-full px-3 sm:px-4 xl:px-6 2k:px-8 4k:px-10 py-3 xl:py-4 2k:py-5 4k:py-6 text-sm sm:text-base xl:text-lg 2k:text-xl 4k:text-2xl text-center bg-white bg-opacity-10 border-2 border-white border-opacity-30 rounded-lg xl:rounded-xl text-white placeholder-white placeholder-opacity-60 backdrop-blur-sm transition-all duration-300 focus:outline-none focus:border-opacity-80 focus:bg-opacity-20 focus:transform focus:-translate-y-1" 
-                            placeholder="Enter code..." 
+                            class="w-full px-3 sm:px-4 xl:px-6 2k:px-8 4k:px-10 py-3 xl:py-4 2k:py-5 4k:py-6 text-sm sm:text-base xl:text-lg 2k:text-xl 4k:text-2xl text-center bg-white bg-opacity-100 border-2 border-gray-400 border-opacity-30 rounded-lg xl:rounded-xl text-gray-800 placeholder-gray-400 placeholder-opacity-60 backdrop-blur-sm transition-all duration-300 focus:outline-none focus:border-opacity-80 focus:bg-opacity-20 focus:transform focus:-translate-y-1" 
+                            placeholder="Enter channel code" 
                             maxlength="12"
                             id="codeInput"
                         >

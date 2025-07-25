@@ -1,0 +1,67 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'lg': '1025px',   // Custom lg breakpoint to avoid iPad Pro conflict
+                        '2k': '2048px',   // 2K resolution
+                        '4k': '3840px',   // 4K resolution
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                              url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+        
+        /* Portrait orientation - use a vertical image */
+        @media (orientation: portrait) {
+            .bg-image {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                                  url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');
+            }
+        }
+        
+        /* Landscape orientation - use a horizontal image */
+        @media (orientation: landscape) {
+            .bg-image {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                                  url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            }
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #fff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+        
+        .gradient-button:hover {
+            background: linear-gradient(45deg, #5a67d8, #6b46c1);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="icons/vurbo-ai-logo-CA5LQKVo.svg" alt="Info Icon" class="w-8 h-8">
+    </div>
+</body>

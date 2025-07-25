@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+.bg-color {
+            background: #f1f1ee;
+        }
+
+        .bg-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                              url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+        
+        /* Portrait orientation - use a vertical image */
+        @media (orientation: portrait) {
+            .bg-image {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                                  url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');
+            }
+        }
+        
+        /* Landscape orientation - use a horizontal image */
+        @media (orientation: landscape) {
+            .bg-image {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                                  url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            }
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #0e0e0e, #464646);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-button {
+            background: linear-gradient(45deg, #E83D37, #ec3832);
+        }
+        
+        .gradient-button:hover {
+            background: linear-gradient(45deg, #ff0000, rgb(241, 10, 10));
+        }
