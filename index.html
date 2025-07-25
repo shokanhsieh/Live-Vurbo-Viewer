@@ -11,7 +11,7 @@
                 extend: {
                     screens: {
                         'md': '740px',    // Custom md breakpoint to tune iPad mini
-                        'lg': '1025px',   // Custom lg breakpoint to avoid iPad Pro conflict
+                        'lg': '1024px',   // Custom lg breakpoint to avoid iPad Pro conflict
                         '2k': '2048px',   // 2K resolution
                         '4k': '3840px',   // 4K resolution
                     }
@@ -26,7 +26,7 @@
 <body class="min-h-screen bg-color bg-cover bg-center bg-fixed flex flex-col text-white">
     <!-- Header -->
     <header class="glass border-b border-white border-opacity-20 px-4 py-2 xl:p-6 2k:p-8 4k:p-10">
-        <div class="max-w-7xl 2k:max-w-[90rem] 4k:max-w-[120rem] mx-auto flex items-center justify-between">
+        <div class="max-w-7xl 2k:max-w-[120rem] 4k:max-w-[180rem] mx-auto flex items-center justify-between">
             <!-- Brand Icon -->
             <img src="icons/vurbo-ai-logo-CA5LQKVo.svg" alt="Vyrbo.ai" class="w-auto h-auto">
 
@@ -79,13 +79,13 @@
     </header>
 
     <!-- Main Content -->
-    <div class="flex-1 flex items-center justify-center p-2 sm:p-4 lg:p-8 xl:p-12 2k:p-16 4k:p-24 relative">
+    <div class="bg-amber-500 flex-1 flex items-center justify-center p-2 sm:p-4 lg:p-8 xl:p-12 2k:p-16 4k:p-24 relative">
         
         <!-- Main Layout Container -->
-        <div class="flex flex-col lg:flex-row items-center justify-top md:justify-center gap-6 lg:gap-8 xl:gap-12 2k:gap-16 4k:gap-20 w-auto max-w-7xl h-[80vh] lg:w-full lg:h-[70vh] 2k:max-w-[120rem] 4k:max-w-[200rem] relative z-10">
+        <div class="bg-green-700 flex flex-col lg:flex-row items-center justify-top md:justify-center gap-6 lg:gap-8 xl:gap-12 2k:gap-16 4k:gap-20 w-95vw max-w-7xl h-[80vh] lg:w-full lg:h-[70vh] 2k:max-w-[120rem] 4k:max-w-[200rem] relative z-10">
             <!-- Event Visual Image (Left in landscape, Top in portrait) -->
-            <div class="order-2 md:order-1 w-full flex justify-center">
-                <div class="relative w-auto h-[30vh] sm:w-[70vw] sm:h-[40vh] lg:w- lg:h-[50vh] xl:w-[35vw] xl:h-[55vh] 2k:w-[35vw] 2k:h-[60vh] 4k:w-[35vw] 4k:h-[65vh] overflow-hidden">
+            <div class="bg-fuchsia-800 order-2 md:order-1 w-full flex justify-center">
+                <div class="bg-yellow-500 relative w-full h-full sm:w-full sm:h-full lg:w-full lg:h-full xl:w-full xl:h-full 2k:w-[35vw] 2k:h-[60vh] 4k:w-[35vw] 4k:h-[65vh] overflow-hidden">
                     <img 
                         src="images/Variant-B7y9n4Oq.svg" 
                         alt="Key Visual" 
@@ -96,7 +96,7 @@
             </div>
             
             <!-- Main Card Container (Right in landscape, Bottom in portrait) -->
-            <div class="order-1 md:order-2 w-full lg:w-[50%] flex justify-center">
+            <div class="bg-blue-700 order-1 md:order-2 w-full lg:w-[50%] flex justify-center">
                 <div class="glass rounded-xl sm:rounded-2xl xl:rounded-3xl 2k:rounded-4xl p-6 sm:p-8 lg:p-10 xl:p-12 2k:p-16 4k:p-20 w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl 2k:max-w-2xl 4k:max-w-3xl text-center">
                     <!-- Title -->
                     <h1 class="font-mae gradient-text text-left text-4xl sm:text-3xl lg:text-4xl xl:text-5xl 2k:text-6xl 4k:text-7xl font-bold mb-3 sm:mb-4 lg:mb-6 xl:mb-8 2k:mb-10 4k:mb-12">
