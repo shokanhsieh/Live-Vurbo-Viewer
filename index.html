@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'lg': '1025px',   // Custom lg breakpoint to avoid iPad Pro conflict
+                        '2k': '2048px',   // 2K resolution
+                        '4k': '3840px',   // 4K resolution
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                              url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+        
+        /* Portrait orientation - use a vertical image */
+        @media (orientation: portrait) {
+            .bg-image {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                                  url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');
+            }
+        }
+        
+        /* Landscape orientation - use a horizontal image */
+        @media (orientation: landscape) {
+            .bg-image {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                                  url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            }
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #fff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+        
+        .gradient-button:hover {
+            background: linear-gradient(45deg, #5a67d8, #6b46c1);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-image bg-cover bg-center bg-fixed flex flex-col text-white">
+    <!-- Header -->
+    <header class="glass border-b border-white border-opacity-20 p-4 xl:p-6 2k:p-8 4k:p-10">
+        <div class="max-w-7xl 2k:max-w-[90rem] 4k:max-w-[120rem] mx-auto flex items-center justify-between">
+            <!-- Brand Icon -->
+            <div class="flex items-center space-x-2 xl:space-x-3 2k:space-x-4">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 xl:w-12 xl:h-12 2k:w-16 2k:h-16 4k:w-20 4k:h-20 bg-gradient-to-br from-blue-400 to-purple-600 rounded-lg xl:rounded-xl flex items-center justify-center">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 2k:w-9 2k:h-9 4k:w-11 4k:h-11 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                </div>
+                <span class="hidden sm:block text-lg xl:text-xl 2k:text-2xl 4k:text-3xl font-semibold">Brand</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-4 xl:space-x-6">
+                <!-- Language Dropdown -->
+                <div class="relative">
+                    <select class="bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg xl:rounded-xl px-3 py-2 xl:px-4 xl:py-3 2k:px-5 2k:py-4 4k:px-6 4k:py-5 text-white text-sm xl:text-base 2k:text-lg 4k:text-xl backdrop-blur-sm focus:outline-none focus:border-opacity-80 appearance-none pr-8 xl:pr-10 2k:pr-12">
+                        <option value="en" class="bg-gray-800 text-white">English</option>
+                        <option value="es" class="bg-gray-800 text-white">Español</option>
+                        <option value="fr" class="bg-gray-800 text-white">Français</option>
+                        <option value="de" class="bg-gray-800 text-white">Deutsch</option>
+                        <option value="zh" class="bg-gray-800 text-white">中文</option>
+                    </select>
+                    <div class="absolute inset-y-0 right-0 flex items-center px-2 xl:px-3 2k:px-4 pointer-events-none">
+                        <svg class="w-4 h-4 xl:w-5 xl:h-5 2k:w-6 2k:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Hamburger Menu -->
+            <div class="md:hidden">
+                <button id="mobileMenuBtn" class="p-2 xl:p-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition-colors">
+                    <svg id="hamburgerIcon" class="w-6 h-6 xl:w-7 xl:h-7 2k:w-8 2k:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="closeIcon" class="w-6 h-6 xl:w-7 xl:h-7 2k:w-8 2k:h-8 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden mt-4 pt-4 border-t border-white border-opacity-20">
+            <div class="flex flex-col space-y-3 xl:space-y-4">
+                <div>
+                    <label class="block text-sm xl:text-base 2k:text-lg font-medium mb-2">Language</label>
+                    <select class="w-full bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg px-3 py-2 xl:px-4 xl:py-3 text-white text-sm xl:text-base 2k:text-lg backdrop-blur-sm focus:outline-none focus:border-opacity-80">
+                        <option value="en" class="bg-gray-800 text-white">English</option>
+                        <option value="es" class="bg-gray-800 text-white">Español</option>
+                        <option value="fr" class="bg-gray-800 text-white">Français</option>
+                        <option value="de" class="bg-gray-800 text-white">Deutsch</option>
+                        <option value="zh" class="bg-gray-800 text-white">中文</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-8 xl:p-12 2k:p-16 4k:p-24 relative">
+        <!-- Background Feature Image -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-[30vw] h-[30vh] sm:w-[35vw] sm:h-[35vh] lg:w-[40vw] lg:h-[40vh] opacity-20 rounded-2xl overflow-hidden">
+                <img 
+                    src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                    alt="Background Feature" 
+                    class="w-full h-full object-cover"
+                >
+            </div>
+        </div>
+        
+        <!-- Main Layout Container -->
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 xl:gap-12 2k:gap-16 4k:gap-20 w-full max-w-7xl 2k:max-w-[90rem] 4k:max-w-[120rem] relative z-10">
+            <!-- Event Visual Image (Left in landscape, Top in portrait) -->
+            <div class="w-full lg:w-[40%] flex justify-center">
+                <div class="relative w-[80vw] h-[35vh] sm:w-[70vw] sm:h-[40vh] lg:w-[35vw] lg:h-[50vh] xl:w-[35vw] xl:h-[55vh] 2k:w-[35vw] 2k:h-[60vh] 4k:w-[35vw] 4k:h-[65vh] rounded-2xl xl:rounded-3xl overflow-hidden shadow-2xl">
+                    <img 
+                        src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                        alt="Event Visual" 
+                        class="w-full h-full object-cover"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+            </div>
+            
+            <!-- Main Card Container (Right in landscape, Bottom in portrait) -->
+            <div class="w-full lg:w-[60%] flex justify-center">
+                <div class="glass rounded-xl sm:rounded-2xl xl:rounded-3xl 2k:rounded-4xl p-6 sm:p-8 lg:p-10 xl:p-12 2k:p-16 4k:p-20 w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl 2k:max-w-2xl 4k:max-w-3xl text-center shadow-2xl">
+                    <!-- Title -->
+                    <h1 class="gradient-text text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2k:text-6xl 4k:text-7xl font-bold mb-3 sm:mb-4 lg:mb-6 xl:mb-8 2k:mb-10 4k:mb-12">
+                        Welcome
+                    </h1>
+                    
+                    <!-- Subtitle -->
+                    <h2 class="text-base sm:text-lg lg:text-xl xl:text-2xl 2k:text-3xl 4k:text-4xl font-light mb-4 sm:mb-6 lg:mb-8 xl:mb-10 2k:mb-12 4k:mb-14 opacity-90">
+                        Join Our Community
+                    </h2>
+                    
+                    <!-- Body Text -->
+                    <p class="text-xs sm:text-sm lg:text-base xl:text-lg 2k:text-xl 4k:text-2xl leading-relaxed mb-6 sm:mb-8 lg:mb-10 xl:mb-12 2k:mb-14 4k:mb-16 opacity-80 px-2 sm:px-4 lg:px-2 xl:px-4 2k:px-6 4k:px-8">
+                        Discover amazing experiences and connect with like-minded individuals. 
+                        Enter your unique code below to get started on this incredible journey.
+                    </p>
+                    
+                    <!-- Form Container -->
+                    <div class="flex flex-col gap-3 sm:gap-4 xl:gap-6 2k:gap-8 4k:gap-10 justify-center items-center w-full">
+                        <!-- Text Input -->
+                        <input 
+                            type="text" 
+                            class="w-full px-3 sm:px-4 xl:px-6 2k:px-8 4k:px-10 py-3 xl:py-4 2k:py-5 4k:py-6 text-sm sm:text-base xl:text-lg 2k:text-xl 4k:text-2xl text-center bg-white bg-opacity-10 border-2 border-white border-opacity-30 rounded-lg xl:rounded-xl text-white placeholder-white placeholder-opacity-60 backdrop-blur-sm transition-all duration-300 focus:outline-none focus:border-opacity-80 focus:bg-opacity-20 focus:transform focus:-translate-y-1" 
+                            placeholder="Enter code..." 
+                            maxlength="12"
+                            id="codeInput"
+                        >
+                        
+                        <!-- Join Button -->
+                        <button 
+                            class="gradient-button w-full px-6 sm:px-8 xl:px-10 2k:px-12 4k:px-16 py-3 xl:py-4 2k:py-5 4k:py-6 text-sm sm:text-base xl:text-lg 2k:text-xl 4k:text-2xl font-semibold rounded-lg xl:rounded-xl transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg active:transform active:translate-y-0 shadow-md"
+                            onclick="handleJoin()"
+                        >
+                            Join
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburgerIcon = document.getElementById('hamburgerIcon');
+        const closeIcon = document.getElementById('closeIcon');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            
+            if (isOpen) {
+                // Close menu
+                mobileMenu.classList.add('hidden');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            } else {
+                // Open menu
+                mobileMenu.classList.remove('hidden');
+                hamburgerIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        });
+
+        // Join form functionality
+        function handleJoin() {
+            const input = document.getElementById('codeInput');
+            const code = input.value.trim();
+            
+            if (code.length === 0) {
+                alert('Please enter a code');
+                return;
+            }
+            
+            if (code.length > 12) {
+                alert('Code must be 12 characters or less');
+                return;
+            }
+            
+            // Simulate joining process
+            alert(`Welcome! You've joined with code: ${code}`);
+            input.value = '';
+        }
+
+        // Allow Enter key to trigger join
+        document.getElementById('codeInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                handleJoin();
+            }
+        });
+        
+        // Prevent form submission on Enter if wrapped in form
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && e.target.id === 'codeInput') {
+                e.preventDefault();
+                handleJoin();
+            }
+        });
+    </script>
+</body>
+</html>
