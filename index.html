@@ -10,6 +10,7 @@
             theme: {
                 extend: {
                     screens: {
+                        'md': '740px',    // Custom md breakpoint to tune iPad mini
                         'lg': '1025px',   // Custom lg breakpoint to avoid iPad Pro conflict
                         '2k': '2048px',   // 2K resolution
                         '4k': '3840px',   // 4K resolution
@@ -24,7 +25,7 @@
 
 <body class="min-h-screen bg-color bg-cover bg-center bg-fixed flex flex-col text-white">
     <!-- Header -->
-    <header class="glass border-b border-white border-opacity-20 p-4 xl:p-6 2k:p-8 4k:p-10">
+    <header class="glass border-b border-white border-opacity-20 px-4 py-2 xl:p-6 2k:p-8 4k:p-10">
         <div class="max-w-7xl 2k:max-w-[90rem] 4k:max-w-[120rem] mx-auto flex items-center justify-between">
             <!-- Brand Icon -->
             <img src="icons/vurbo-ai-logo-CA5LQKVo.svg" alt="Vyrbo.ai" class="w-auto h-auto">
@@ -33,12 +34,11 @@
             <div class="hidden md:flex items-center space-x-4 xl:space-x-6">
                 <!-- Language Dropdown -->
                 <div class="relative">
-                    <select class="bg-Black bg-opacity-5 border border-gray-400 border-opacity-30 rounded-lg xl:rounded-xl px-3 py-2 xl:px-4 xl:py-3 2k:px-5 2k:py-4 4k:px-6 4k:py-5 text-neutral-950 text-sm xl:text-base 2k:text-lg 4k:text-xl backdrop-blur-sm focus:outline-none focus:border-opacity-80 appearance-none pr-8 xl:pr-10 2k:pr-12">
-                        <option value="en" class="bg-gray-800 text-white">English</option>
-                        <option value="es" class="bg-gray-800 text-white">Español</option>
-                        <option value="fr" class="bg-gray-800 text-white">Français</option>
-                        <option value="de" class="bg-gray-800 text-white">Deutsch</option>
-                        <option value="zh" class="bg-gray-800 text-white">中文</option>
+                    <select class="bg-Black bg-opacity-5 border border-gray-400 border-opacity-30 rounded-lg xl:rounded-xl px-3 py-2 xl:px-4 xl:py-3 2k:px-5 2k:py-4 4k:px-6 4k:py-5 font-mae text-neutral-950 text-sm xl:text-base 2k:text-lg 4k:text-xl backdrop-blur-sm focus:outline-none focus:border-opacity-80 appearance-none pr-8 xl:pr-10 2k:pr-12">
+                        <option value="en" class="bg-gray-800 font-mae text-white">English</option>
+                        <option value="es" class="bg-gray-800 font-mae text-white">Español</option>
+                        <option value="fr" class="bg-gray-800 font-mae text-white">Français</option>
+                        <option value="de" class="bg-gray-800 font-mae text-white">Deutsch</option>
                     </select>
                     <div class="absolute inset-y-0 right-0 flex items-center px-2 xl:px-3 2k:px-4 pointer-events-none">
                         <svg class="w-4 h-4 xl:w-5 xl:h-5 2k:w-6 2k:h-6 text-white" fill="none" stroke="black" viewBox="0 0 24 24">
@@ -65,13 +65,13 @@
         <div id="mobileMenu" class="md:hidden hidden mt-4 pt-4 border-t border-white border-opacity-20">
             <div class="flex flex-col space-y-3 xl:space-y-4">
                 <div>
-                    <label class="block text-gray-950 text-sm xl:text-base 2k:text-lg font-medium mb-2">Language</label>
+                    <label class="block text-gray-950 text-sm xl:text-base 2k:text-lg font-mae font-medium mb-2">Language</label>
                     <select class="w-full bg-black bg-opacity-5 border border-white border-opacity-30 rounded-lg px-3 py-2 xl:px-4 xl:py-3 text-neutral-950 text-sm xl:text-base 2k:text-lg backdrop-blur-sm focus:outline-none focus:border-opacity-80">
-                        <option value="en" class="bg-gray-800 text-white">English</option>
-                        <option value="es" class="bg-gray-800 text-white">Español</option>
-                        <option value="fr" class="bg-gray-800 text-white">Français</option>
-                        <option value="de" class="bg-gray-800 text-white">Deutsch</option>
-                        <option value="zh" class="bg-gray-800 text-white">中文</option>
+                        <option value="en" class="bg-gray-800 font-mae text-white">English</option>
+                        <option value="es" class="bg-gray-800 font-mae text-white">Español</option>
+                        <option value="fr" class="bg-gray-800 font-mae text-white">Français</option>
+                        <option value="de" class="bg-gray-800 font-mae text-white">Deutsch</option>
+                        <option value="zh" class="bg-gray-800 font-mae text-white">中文</option>
                     </select>
                 </div>
             </div>
@@ -79,13 +79,13 @@
     </header>
 
     <!-- Main Content -->
-    <div class="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-8 xl:p-12 2k:p-16 4k:p-24 relative">
+    <div class="flex-1 flex items-center justify-center p-2 sm:p-4 lg:p-8 xl:p-12 2k:p-16 4k:p-24 relative">
         
         <!-- Main Layout Container -->
-        <div class="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 xl:gap-12 2k:gap-16 4k:gap-20 w-full max-w-7xl 2k:max-w-[90rem] 4k:max-w-[120rem] relative z-10">
+        <div class="flex flex-col lg:flex-row items-center justify-top md:justify-center gap-6 lg:gap-8 xl:gap-12 2k:gap-16 4k:gap-20 w-auto max-w-7xl h-[80vh] lg:w-full lg:h-[70vh] 2k:max-w-[120rem] 4k:max-w-[200rem] relative z-10">
             <!-- Event Visual Image (Left in landscape, Top in portrait) -->
-            <div class="w-full lg:w-[40%] flex justify-center">
-                <div class="relative w-auto h-[35vh] sm:w-[70vw] sm:h-[40vh] lg:w-[35vw] lg:h-[50vh] xl:w-[35vw] xl:h-[55vh] 2k:w-[35vw] 2k:h-[60vh] 4k:w-[35vw] 4k:h-[65vh] overflow-hidden">
+            <div class="order-2 md:order-1 w-full flex justify-center">
+                <div class="relative w-auto h-[30vh] sm:w-[70vw] sm:h-[40vh] lg:w- lg:h-[50vh] xl:w-[35vw] xl:h-[55vh] 2k:w-[35vw] 2k:h-[60vh] 4k:w-[35vw] 4k:h-[65vh] overflow-hidden">
                     <img 
                         src="images/Variant-B7y9n4Oq.svg" 
                         alt="Key Visual" 
@@ -96,20 +96,20 @@
             </div>
             
             <!-- Main Card Container (Right in landscape, Bottom in portrait) -->
-            <div class="w-full lg:w-[60%] flex justify-center">
+            <div class="order-1 md:order-2 w-full lg:w-[50%] flex justify-center">
                 <div class="glass rounded-xl sm:rounded-2xl xl:rounded-3xl 2k:rounded-4xl p-6 sm:p-8 lg:p-10 xl:p-12 2k:p-16 4k:p-20 w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl 2k:max-w-2xl 4k:max-w-3xl text-center">
                     <!-- Title -->
-                    <h1 class="gradient-text text-left text-4xl sm:text-3xl lg:text-4xl xl:text-5xl 2k:text-6xl 4k:text-7xl font-bold mb-3 sm:mb-4 lg:mb-6 xl:mb-8 2k:mb-10 4k:mb-12">
+                    <h1 class="font-mae gradient-text text-left text-4xl sm:text-3xl lg:text-4xl xl:text-5xl 2k:text-6xl 4k:text-7xl font-bold mb-3 sm:mb-4 lg:mb-6 xl:mb-8 2k:mb-10 4k:mb-12">
                         Be Here.<br>Understand Everything.
                     </h1>
                     
                     <!-- Subtitle -->
-                    <h2 class="text-base text-neutral-800 sm:text-lg lg:text-xl xl:text-2xl 2k:text-3xl 4k:text-4xl font-light mb-4 sm:mb-6 lg:mb-8 xl:mb-10 2k:mb-12 4k:mb-14 opacity-90">
+                    <h2 class="font-mae text-base text-neutral-800 sm:text-lg lg:text-xl xl:text-2xl 2k:text-3xl 4k:text-4xl font-light mb-4 sm:mb-6 lg:mb-8 xl:mb-10 2k:mb-12 4k:mb-14 opacity-90">
                         <!--Join Our Community-->
                     </h2>
                     
                     <!-- Body Text -->
-                    <p class="text-xs sm:text-sm lg:text-base xl:text-lg 2k:text-xl 4k:text-2xl leading-relaxed mb-6 sm:mb-8 lg:mb-10 xl:mb-12 2k:mb-14 4k:mb-16 opacity-80 px-2 sm:px-4 lg:px-2 xl:px-4 2k:px-6 4k:px-8">
+                    <p class="font-mae text-xs sm:text-sm lg:text-base xl:text-lg 2k:text-xl 4k:text-2xl leading-relaxed mb-6 sm:mb-8 lg:mb-10 xl:mb-12 2k:mb-14 4k:mb-16 opacity-80 px-2 sm:px-4 lg:px-2 xl:px-4 2k:px-6 4k:px-8">
                         <!--Discover amazing experiences and connect with like-minded individuals. 
                         Enter your unique code below to get started on this incredible journey.-->
                     </p>
@@ -119,7 +119,7 @@
                         <!-- Text Input -->
                         <input 
                             type="text" 
-                            class="w-full px-3 sm:px-4 xl:px-6 2k:px-8 4k:px-10 py-3 xl:py-4 2k:py-5 4k:py-6 text-sm sm:text-base xl:text-lg 2k:text-xl 4k:text-2xl text-center bg-white bg-opacity-100 border-2 border-gray-400 border-opacity-30 rounded-lg xl:rounded-xl text-gray-800 placeholder-gray-400 placeholder-opacity-60 backdrop-blur-sm transition-all duration-300 focus:outline-none focus:border-opacity-80 focus:bg-opacity-20 focus:transform focus:-translate-y-1" 
+                            class="w-full px-3 sm:px-4 xl:px-6 2k:px-8 4k:px-10 py-3 xl:py-4 2k:py-5 4k:py-6 text-sm sm:text-base xl:text-lg 2k:text-xl 4k:text-2xl font-mae text-center bg-white bg-opacity-100 border-2 border-gray-400 border-opacity-30 rounded-lg xl:rounded-xl text-gray-800 placeholder-gray-400 placeholder-opacity-60 backdrop-blur-sm transition-all duration-300 focus:outline-none focus:border-opacity-80 focus:bg-opacity-20 focus:transform focus:-translate-y-1" 
                             placeholder="Enter channel code" 
                             maxlength="12"
                             id="codeInput"
@@ -127,7 +127,7 @@
                         
                         <!-- Join Button -->
                         <button 
-                            class="gradient-button w-full px-6 sm:px-8 xl:px-10 2k:px-12 4k:px-16 py-3 xl:py-4 2k:py-5 4k:py-6 text-sm sm:text-base xl:text-lg 2k:text-xl 4k:text-2xl font-semibold rounded-lg xl:rounded-xl transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg active:transform active:translate-y-0 shadow-md"
+                            class="gradient-button w-full px-6 sm:px-8 xl:px-10 2k:px-12 4k:px-16 py-3 xl:py-4 2k:py-5 4k:py-6 text-sm sm:text-base xl:text-lg 2k:text-xl 4k:text-2xl font-mae font-semibold rounded-lg xl:rounded-xl transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg active:transform active:translate-y-0 shadow-md"
                             onclick="handleJoin()"
                         >
                             Join
