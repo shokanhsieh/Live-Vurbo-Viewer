@@ -10,8 +10,10 @@
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-amber-500: oklch(76.9% 0.188 70.08);
     --color-amber-600: oklch(66.6% 0.179 58.318);
+    --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-green-700: oklch(52.7% 0.154 150.069);
     --color-blue-700: oklch(48.8% 0.243 264.376);
+    --color-fuchsia-800: oklch(45.2% 0.211 324.591);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-gray-950: oklch(13% 0.028 261.692);
@@ -410,6 +412,9 @@
   .bg-blue-700 {
     background-color: var(--color-blue-700);
   }
+  .bg-fuchsia-800 {
+    background-color: var(--color-fuchsia-800);
+  }
   .bg-gray-800 {
     background-color: var(--color-gray-800);
   }
@@ -421,6 +426,9 @@
   }
   .bg-white {
     background-color: var(--color-white);
+  }
+  .bg-yellow-500 {
+    background-color: var(--color-yellow-500);
   }
   .bg-gradient-to-t {
     --tw-gradient-position: to top in oklab;
@@ -676,9 +684,19 @@
       height: 40vh;
     }
   }
+  .sm\:h-full {
+    @media (width >= 40rem) {
+      height: 100%;
+    }
+  }
   .sm\:w-\[70vw\] {
     @media (width >= 40rem) {
       width: 70vw;
+    }
+  }
+  .sm\:w-full {
+    @media (width >= 40rem) {
+      width: 100%;
     }
   }
   .sm\:max-w-md {
@@ -800,6 +818,11 @@
       height: 70vh;
     }
   }
+  .lg\:h-full {
+    @media (width >= 64rem) {
+      height: 100%;
+    }
+  }
   .lg\:w-\[35vw\] {
     @media (width >= 64rem) {
       width: 35vw;
@@ -908,6 +931,11 @@
       height: 55vh;
     }
   }
+  .xl\:h-full {
+    @media (width >= 80rem) {
+      height: 100%;
+    }
+  }
   .xl\:w-5 {
     @media (width >= 80rem) {
       width: calc(var(--spacing) * 5);
@@ -921,6 +949,11 @@
   .xl\:w-\[35vw\] {
     @media (width >= 80rem) {
       width: 35vw;
+    }
+  }
+  .xl\:w-full {
+    @media (width >= 80rem) {
+      width: 100%;
     }
   }
   .xl\:max-w-xl {
